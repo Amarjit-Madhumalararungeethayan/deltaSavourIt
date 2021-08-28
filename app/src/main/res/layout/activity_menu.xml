@@ -460,6 +460,7 @@
         android:textColor="@color/white"
         android:layout_marginRight="20dp"
         android:id="@+id/card"
+        android:fontFamily="@font/chalkboard"
         />
 
     

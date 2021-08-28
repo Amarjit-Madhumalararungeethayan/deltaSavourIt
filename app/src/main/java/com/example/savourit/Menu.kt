@@ -1,5 +1,6 @@
 package com.example.savourit
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +16,10 @@ class Menu : AppCompatActivity() {
     lateinit var binding : ActivityMenuBinding
 
     override fun onBackPressed() {
-        finishAffinity()
+        val intent = Intent(this, Home::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.left, R.anim.nothing)
+        finish()
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -42,6 +46,15 @@ class Menu : AppCompatActivity() {
             binding.total.text = "Total: \$ 15.70"
             binding.disguise.isVisible = true
             binding.basket.isVisible = true
+
+        }
+
+        binding.card.setOnClickListener(){
+
+            val intent = Intent(this, Transaction::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.right, R.anim.nothing)
+            finish()
 
         }
     }

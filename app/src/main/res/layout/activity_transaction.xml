@@ -4,6 +4,258 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
     tools:context=".Transaction">
 
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="1200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/drop"
+        android:backgroundTint="#676098"
+        app:cardCornerRadius="30dp"
+        android:layout_marginBottom="600dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/burger"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="45dp"
+        android:layout_marginBottom="1300dp"
+        android:id="@+id/id1"
+        android:elevation="3dp"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/fries"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="1200dp"
+        android:id="@+id/id2"
+        android:elevation="1dp"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/burger"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="45dp"
+        android:layout_marginBottom="900dp"
+        android:id="@+id/id3"
+        android:elevation="3dp"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/fries"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="750dp"
+        android:id="@+id/id4"
+        android:elevation="3dp"
+        />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your transaction is being made "
+        android:fontFamily="@font/moon"
+        android:id="@+id/trans"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="170dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
+
+
+
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/trans"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/icon"
+        android:id="@+id/picc"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/id1"
+        android:backgroundTint="@color/white"
+        android:layout_marginBottom="800dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="20dp"
+        android:alpha="0.6"
+        android:id="@+id/box"
+        app:cardCornerRadius="20dp"
+        />
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:layout_constraintTop_toBottomOf="@id/box"
+        android:backgroundTint="@color/white"
+        android:layout_marginBottom="800dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="20dp"
+        android:alpha="1"
+        android:id="@+id/wbox"
+        app:cardCornerRadius="20dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transaction Successful"
+        android:textColor="@color/white"
+        android:elevation="25dp"
+        android:fontFamily="@font/chalkboard"
+        app:layout_constraintTop_toTopOf="@id/box"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp"
+        android:textSize="20sp"
+        android:id="@+id/succ"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$15.70"
+        android:textColor="@color/white"
+        android:elevation="25dp"
+        android:fontFamily="@font/chalkboard"
+        app:layout_constraintTop_toBottomOf="@id/succ"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="50sp"
+        android:id="@+id/amt"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--------------------------"
+        android:textColor="@color/white"
+        android:elevation="25dp"
+        android:fontFamily="@font/chalkboard"
+        app:layout_constraintTop_toBottomOf="@id/amt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="25sp"
+        android:id="@+id/dots"
+        android:alpha="0.6"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balance: $325.19"
+        android:textColor="@color/white"
+        android:elevation="25dp"
+        android:fontFamily="@font/chalkboard"
+        app:layout_constraintTop_toBottomOf="@id/dots"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
+        android:id="@+id/bal"
+        android:alpha="0.9"
+        />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="@id/wbox"
+        app:layout_constraintBottom_toBottomOf="@+id/wbox"
+        app:layout_constraintStart_toStartOf="@id/wbox"
+        android:layout_marginLeft="20dp"
+        android:elevation="25dp"
+        android:src="@drawable/cardy"
+        android:id="@+id/cardy"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mastercard Debit"
+        android:textColor="@color/black"
+        android:elevation="25dp"
+        android:fontFamily="@font/chalkboard"
+        app:layout_constraintTop_toTopOf="@id/wbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:id="@+id/master"
+        android:alpha="0.6"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="**** **** **** 2021"
+        android:textColor="@color/black"
+        android:elevation="25dp"
+        android:fontFamily="@font/chalkboard"
+        app:layout_constraintTop_toBottomOf="@id/master"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
+        android:layout_marginLeft="60dp"
+        android:id="@+id/code"
+        android:alpha="0.6"
+        android:layout_marginTop="10dp"
+        />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="BACK TO HOME"
+        android:layout_marginLeft="30dp"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/box"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="5dp"
+        android:background="@drawable/rounded_yell"
+        android:textColor="@color/white"
+        android:layout_marginRight="30dp"
+        android:id="@+id/card"
+        android:fontFamily="@font/chalkboard"
+        />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!-- #676098  !-->
