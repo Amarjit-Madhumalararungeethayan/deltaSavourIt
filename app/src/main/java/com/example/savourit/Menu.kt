@@ -1,52 +1,49 @@
 package com.example.savourit
 
-import android.content.Intent
 import android.graphics.Color
-import android.media.MediaPlayer
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.view.View
+import androidx.annotation.RequiresApi
+import androidx.core.view.isVisible
 import com.example.savourit.databinding.ActivityMainBinding
+import com.example.savourit.databinding.ActivityMenuBinding
 
-class MainActivity : AppCompatActivity() {
+class Menu : AppCompatActivity() {
 
-
-    lateinit var binding : ActivityMainBinding
+    lateinit var binding : ActivityMenuBinding
 
     override fun onBackPressed() {
         finishAffinity()
     }
+
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        window.statusBarColor = Color.parseColor("#cdcbd9")
+        window.decorView.apply {
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.statusBarColor = Color.parseColor("#FFFFFFFF")
+            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
         }
 
-        binding.logo.animate().translationY(-1400f).setDuration(2000).setStartDelay(3300)
+        binding.disguise.isVisible = false
+        binding.basket.isVisible = false
 
-        loginScreen()
-    }
+        binding.demoPic.setOnClickListener(){
 
-    private fun loginScreen() {
-        val countDown: CountDownTimer
-        countDown = object : CountDownTimer(3500, 1000) {
-            override fun onTick(millisecsToFinish: Long) {}
-            override fun onFinish() {
+            binding.fc2.animate().translationX(200f).setDuration(200)
+            binding.demoTitle.animate().translationX(200f).setDuration(200)
+            binding.demoDesc.animate().translationX(200f).setDuration(200)
+            binding.demoPrice.animate().translationX(1000f).setDuration(200)
+            binding.total.text = "Total: \$ 15.70"
+            binding.disguise.isVisible = true
+            binding.basket.isVisible = true
 
-                val intent = Intent(this@MainActivity, Home::class.java)
-                startActivity(intent);
-                overridePendingTransition(R.anim.up, R.anim.nothing)
-            }
-
-
-            }
-        countDown.start()
+        }
     }
 
     override fun onResume() {
@@ -67,5 +64,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
-

@@ -2,16 +2,12 @@ package com.example.savourit
 
 import android.graphics.Color
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.Window
-import android.view.WindowManager
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.savourit.databinding.ActivityHomeBinding
-import com.example.savourit.databinding.ActivityMainBinding
 
 var images : ArrayList<Int> = ArrayList()
 var info : ArrayList<String> = ArrayList()
@@ -52,8 +48,28 @@ class Home : AppCompatActivity() {
         val LinearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.list.layoutManager = LinearLayoutManager
 
+        binding.list.setNestedScrollingEnabled(false)
+
         // Adapter to RecyclerView
         binding.list.adapter = adapter
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        FullScreencall()
+    }
+
+    fun FullScreencall() {
+        if (Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) { // lower api
+            val v = this.window.decorView
+            v.systemUiVisibility = View.GONE
+        } else if (Build.VERSION.SDK_INT >= 19) {
+            //for new api versions.
+            val decorView = window.decorView
+            val uiOptions =
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+            decorView.systemUiVisibility = uiOptions
+        }
     }
 }

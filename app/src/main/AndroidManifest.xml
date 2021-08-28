@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.SavourIt">
-        <activity android:name=".Home"></activity>
+        <activity android:name=".Transaction"></activity>
+        <activity android:name=".Menu" />
+        <activity android:name=".Home" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

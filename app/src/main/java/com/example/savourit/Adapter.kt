@@ -52,28 +52,16 @@ class Adapter(context : Context, images: ArrayList<Int>, info : ArrayList<String
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var img: ImageView = view.findViewById(R.id.imageView)
         var txt : TextView = view.findViewById(R.id.name)
-/**
+
         init {
-            view.imageView.setOnClickListener { view: View ->
+            img.setOnClickListener {
 
-                for(i in 0..171){
-                    if(imagesX[i] == images[position]){
-                        ID = i
-                    }
-                }
-                val intent = Intent(context, DogGalleryDetails::class.java)
-                intent.putExtra("Position",ID)
-                val options = ViewCompat.getTransitionName(img)?.let {
-                    ActivityOptionsCompat.makeSceneTransitionAnimation(
-                        context as Activity, img,
-                        it
-                    )
-                }
-                if (options != null) {
-                    context.startActivity(intent, options.toBundle())
-                }
+                val intent = Intent(context, Menu::class.java)
+                context.startActivity(intent)
+
+
             }
+        }
 
-        } **/
+        }
     }
-}
